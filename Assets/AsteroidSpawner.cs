@@ -12,7 +12,7 @@ public class AsteroidSpawner : MonoBehaviour
     {
         InvokeRepeating(nameof(spawnAsteroid), spawnRate, spawnRate);
     }
-    void spawnAsteroid()
+    public void spawnAsteroid()
     {
         Vector3 spawnDirection = Random.insideUnitCircle.normalized * spawnDistance;
         Vector3 spawnPoint = transform.position + spawnDirection * spawnDistance;

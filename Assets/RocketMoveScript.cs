@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
@@ -6,7 +7,8 @@ using UnityEngine;
 
 public class RocketMoveScript : MonoBehaviour
 {
-    private bool isThrusting;
+    private bool isThrustingForward;
+    private bool isThrustingBackwards;
     private float direction;
     public Bullet BulletPreFab;
     public float moveSpeed = 5.0f;
@@ -23,7 +25,8 @@ public class RocketMoveScript : MonoBehaviour
     void Update()
     {
 
-        isThrusting = Input.GetKey(KeyCode.W);
+        isThrustingForward = Input.GetKey(KeyCode.W);
+        isThrustingBackwards = Input.GetKey(KeyCode.S);
 
         if (Input.GetKey(KeyCode.A))
         {
@@ -56,10 +59,17 @@ public class RocketMoveScript : MonoBehaviour
     void FixedUpdate()
     {
 
-        if (isThrusting)
+        if (isThrustingForward)
         {
 
             rocketBody.AddForce(transform.up * moveSpeed);
+
+        }
+
+        if (isThrustingBackwards)
+        {
+
+            rocketBody.AddForce(-transform.up * moveSpeed);
 
         }
 
@@ -76,6 +86,19 @@ public class RocketMoveScript : MonoBehaviour
 
         Bullet shotBullet = Instantiate(BulletPreFab, transform.position, transform.rotation);
         shotBullet.sendDirection(transform.up);
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+
+        string collisionTag = collision.gameObject.tag;
+        if (collisionTag == "Asteroid")
+        {
+
+            Destroy(gameObject);
+
+        }
 
     }
 }
