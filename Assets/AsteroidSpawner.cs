@@ -24,10 +24,7 @@ public class AsteroidSpawner : MonoBehaviour
         spawnedAsteroid.Size = Random.Range(asteroidPreFab.minSize, asteroidPreFab.maxSize);
 
         Vector2 trajectory = rotation * -spawnDirection;
-
-
-
-
+        spawnedAsteroid.SetTrajectory(trajectory);
 
     }
 }

@@ -172,5 +172,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletBody: {fileID: 2363123216443475759}
-  speed: 50
-  bulletLifeTime: 10
+  speed: 100
+  bulletLifeTime: 5

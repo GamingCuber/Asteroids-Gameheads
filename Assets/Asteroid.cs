@@ -36,7 +36,7 @@ public class Asteroid : MonoBehaviour
 
     }
 
-    void SetTrajectory(Vector2 direction)
+    public void SetTrajectory(Vector2 direction)
     {
 
         asteroidBody.AddForce(direction * movementSpeed);
