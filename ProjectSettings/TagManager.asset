@@ -10,13 +10,13 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Asteroid
+  - 
   - Water
   - UI
   - Player
   - Bullet
   - Boundary
-  - 
+  - Asteroid
   - 
   - 
   - 

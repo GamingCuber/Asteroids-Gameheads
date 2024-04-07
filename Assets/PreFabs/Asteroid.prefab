@@ -178,5 +178,5 @@ MonoBehaviour:
   Size: 1
   minSize: 1
   maxSize: 7
-  movementSpeed: 100
+  movementSpeed: 125
   maxLifetime: 12.5

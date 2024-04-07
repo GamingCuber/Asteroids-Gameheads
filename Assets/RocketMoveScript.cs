@@ -96,7 +96,12 @@ public class RocketMoveScript : MonoBehaviour
         if (collisionTag == "Asteroid")
         {
 
-            Destroy(gameObject);
+            rocketBody.velocity = Vector3.zero;
+            rocketBody.angularVelocity = 0.0f;
+
+            gameObject.SetActive(false);
+
+            FindObjectOfType<GameManager>().OnPlayerDeath();
 
         }
 

@@ -12,14 +12,12 @@ public class Asteroid : MonoBehaviour
     public float maxLifetime = 10.0f;
     private SpriteRenderer asteroidRenderer;
     private Rigidbody2D asteroidBody;
-    private BoxCollider2D asteroidCollider;
 
     void Awake()
     {
 
         asteroidRenderer = GetComponent<SpriteRenderer>();
         asteroidBody = GetComponent<Rigidbody2D>();
-        asteroidCollider = GetComponent<BoxCollider2D>();
 
     }
 
@@ -30,8 +28,6 @@ public class Asteroid : MonoBehaviour
         asteroidRenderer.sprite = Sprites[Random.Range(0, Sprites.Length)];
 
         Size = Random.Range(minSize, maxSize);
-
-        asteroidCollider.size = asteroidCollider.size * Size;
 
         transform.eulerAngles = new Vector3(0.0f, 0.0f, Random.value * 360.0f);
         transform.localScale = Vector3.one * Size;
@@ -54,7 +50,6 @@ public class Asteroid : MonoBehaviour
 
         if (collision.gameObject.tag == "Bullet")
         {
-            Debug.Log("Hit Asteroid");
             Destroy(gameObject);
         }
 
