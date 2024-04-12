@@ -5,18 +5,27 @@ using UnityEngine;
 public class CenterGoal : MonoBehaviour
 {
     public int health = 8;
-
-    public Sprite[] sprites;
+    public Rigidbody2D goalBody;
+    public GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
 
+        goalBody = GetComponent<Rigidbody2D>();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
 
+        if (health <= 0)
+        {
+
+            gameManager.GameOver();
+
+        }
+
     }
+
 }

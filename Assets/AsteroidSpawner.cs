@@ -7,6 +7,7 @@ public class AsteroidSpawner : MonoBehaviour
     public float spawnDistance = 15.0f;
     public float trajectoryVariance = 15.0f;
     public Asteroid asteroidPreFab;
+    public Asteroid goodAsteroidPreFab;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +21,22 @@ public class AsteroidSpawner : MonoBehaviour
         float variance = Random.Range(-trajectoryVariance, trajectoryVariance);
         Quaternion rotation = Quaternion.AngleAxis(variance, Vector3.forward);
 
-        Asteroid spawnedAsteroid = Instantiate(asteroidPreFab, spawnPoint, rotation);
+        float randomizer = Random.Range(1, 20);
+        Asteroid spawnedAsteroid;
+
+        if (randomizer == 1)
+        {
+
+            spawnedAsteroid = Instantiate(goodAsteroidPreFab, spawnPoint, rotation);
+
+        }
+        else
+        {
+
+            spawnedAsteroid = Instantiate(asteroidPreFab, spawnPoint, rotation);
+
+        }
+
         spawnedAsteroid.Size = Random.Range(asteroidPreFab.minSize, asteroidPreFab.maxSize);
 
         Vector2 trajectory = rotation * -spawnDirection;

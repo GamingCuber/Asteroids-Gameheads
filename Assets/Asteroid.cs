@@ -10,6 +10,8 @@ public class Asteroid : MonoBehaviour
     public float movementSpeed = 5.0f;
 
     public float maxLifetime = 10.0f;
+
+    public CenterGoal centerGoal;
     private SpriteRenderer asteroidRenderer;
     private Rigidbody2D asteroidBody;
 
@@ -51,6 +53,25 @@ public class Asteroid : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag == "Center")
+        {
+
+
+            if (gameObject.tag == "Asteroid")
+            {
+
+                centerGoal.health -= 1;
+
+            }
+            else if (gameObject.tag == "GoodAsteroid")
+            {
+
+                centerGoal.health += 1;
+
+            }
+
         }
 
     }

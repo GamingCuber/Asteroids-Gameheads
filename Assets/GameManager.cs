@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    public int lives = 3;
     public float respawnTime = 1.5f;
     public RocketMoveScript Rocket;
 
@@ -12,20 +11,8 @@ public class GameManager : MonoBehaviour
     public void OnPlayerDeath()
     {
 
-        lives--;
 
-        if (lives <= 0)
-        {
-
-            GameOver();
-
-        }
-        else
-        {
-
-            Invoke(nameof(PlayerRespawn), respawnTime);
-
-        }
+        Invoke(nameof(PlayerRespawn), respawnTime);
 
 
     }
