@@ -14,7 +14,7 @@ public class UIManager : MonoBehaviour
     {
 
         int health = center.health;
-        ScoreText.GetComponent<Text>().text = "Score: " + health;
+        ScoreText.GetComponent<Text>().text = "Health of Center: " + health;
 
         if (health <= 0)
         {

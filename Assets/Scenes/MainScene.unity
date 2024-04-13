@@ -308,8 +308,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16b1829fa090c64889a3533425ffff34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnRate: 0.5
-  spawnDistance: 4.5
+  spawnRate: 0.45
+  spawnDistance: 4
   trajectoryVariance: 15
   asteroidPreFab: {fileID: 262611817}
   goodAsteroidPreFab: {fileID: 1488986032}
@@ -397,10 +397,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -503,6 +503,10 @@ PrefabInstance:
       propertyPath: center
       value: 
       objectReference: {fileID: 931715126}
+    - target: {fileID: -9123526724592247029, guid: 3facb51eb4610f072929226f41f3cdfc, type: 3}
+      propertyPath: maxLifetime
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 2499393510832644976, guid: 3facb51eb4610f072929226f41f3cdfc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1500
@@ -777,7 +781,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Game Over!
 
-    Press Enter to Play Again'
+    Press R to Play Again'
 --- !u!222 &759615916
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -972,7 +976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 663393be9055838298f1fbc00058b643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 8
+  health: 5
   goalBody: {fileID: 931715127}
   gameManager: {fileID: 296347038}
 --- !u!50 &931715127
@@ -1180,6 +1184,10 @@ PrefabInstance:
       propertyPath: center
       value: 
       objectReference: {fileID: 931715126}
+    - target: {fileID: 6373307285064716110, guid: 55ed32c8a2d2f6af49d92bde76e0dddb, type: 3}
+      propertyPath: maxLifetime
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 7135110386275350379, guid: 55ed32c8a2d2f6af49d92bde76e0dddb, type: 3}
       propertyPath: m_Name
       value: GoodAsteroid
@@ -1398,7 +1406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BulletPreFab: {fileID: 3016287015136009151, guid: 72bc9666392ecdef1bc499bbcd1bbcfe, type: 3}
   moveSpeed: 7
-  turnSpeed: 0.4
+  turnSpeed: 0.6
   rocketBody: {fileID: 2075798191}
 --- !u!61 &2075798190
 BoxCollider2D:

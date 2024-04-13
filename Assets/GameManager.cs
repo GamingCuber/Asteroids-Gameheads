@@ -48,18 +48,27 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
 
+        GameObject[] gameObjects = FindObjectsOfType<GameObject>();
+
+        foreach (GameObject obj in gameObjects)
+        {
+            if (obj.name == "Asteroid(Clone)" || obj.name == "GoodAsteroid(Clone)")
+            {
+                Destroy(obj);
+            }
+
+        }
+
         Rocket.gameObject.SetActive(false);
         spawner.gameObject.SetActive(false);
 
-
     }
-
     public void RestartGame()
     {
 
         Rocket.gameObject.SetActive(true);
         spawner.gameObject.SetActive(true);
-        centerGoal.health = 8;
+        centerGoal.health = 5;
 
 
     }

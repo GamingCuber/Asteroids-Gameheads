@@ -21,7 +21,7 @@ public class AsteroidSpawner : MonoBehaviour
         float variance = Random.Range(-trajectoryVariance, trajectoryVariance);
         Quaternion rotation = Quaternion.AngleAxis(variance, Vector3.forward);
 
-        float randomizer = Random.Range(1, 10);
+        float randomizer = Random.Range(1, 9);
         Asteroid spawnedAsteroid;
 
         if (randomizer == 1)
