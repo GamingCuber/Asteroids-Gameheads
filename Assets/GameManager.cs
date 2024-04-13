@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
     }
     public void RestartGame()
     {
-
+        Rocket.gameObject.transform.position = new Vector3(0, 5, 0);
         Rocket.gameObject.SetActive(true);
         spawner.gameObject.SetActive(true);
         centerGoal.health = 5;
