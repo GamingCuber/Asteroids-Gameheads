@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CenterGoal : MonoBehaviour
 {
-    public int health = 8;
+    public int health = 0;
     public Rigidbody2D goalBody;
     public GameManager gameManager;
 

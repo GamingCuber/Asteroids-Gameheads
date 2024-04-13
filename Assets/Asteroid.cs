@@ -11,7 +11,7 @@ public class Asteroid : MonoBehaviour
 
     public float maxLifetime = 10.0f;
 
-    public CenterGoal centerGoal;
+    public CenterGoal center;
     private SpriteRenderer asteroidRenderer;
     private Rigidbody2D asteroidBody;
 
@@ -62,15 +62,17 @@ public class Asteroid : MonoBehaviour
             if (gameObject.tag == "Asteroid")
             {
 
-                centerGoal.health -= 1;
+                center.health--;
 
             }
             else if (gameObject.tag == "GoodAsteroid")
             {
 
-                centerGoal.health += 1;
+                center.health++;
 
             }
+
+            Destroy(gameObject);
 
         }
 

@@ -180,3 +180,4 @@ MonoBehaviour:
   maxSize: 7
   movementSpeed: 125
   maxLifetime: 12.5
+  centerGoal: {fileID: 0}

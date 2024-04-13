@@ -6,6 +6,9 @@ public class GameManager : MonoBehaviour
 {
     public float respawnTime = 1.5f;
     public RocketMoveScript Rocket;
+    public AsteroidSpawner spawner;
+    public CenterGoal centerGoal;
+    public GameObject UI;
 
 
     public void OnPlayerDeath()
@@ -45,7 +48,20 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
 
-        // TODO
+        Rocket.gameObject.SetActive(false);
+        spawner.gameObject.SetActive(false);
+
 
     }
+
+    public void RestartGame()
+    {
+
+        Rocket.gameObject.SetActive(true);
+        spawner.gameObject.SetActive(true);
+        centerGoal.health = 8;
+
+
+    }
+
 }
